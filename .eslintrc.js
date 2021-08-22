@@ -8,7 +8,7 @@ module.exports = {
     "react-app",
     "airbnb",
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
+    "prettier",
   ],
   globals: {
     Atomics: "readonly",
@@ -23,16 +23,19 @@ module.exports = {
   },
   plugins: ["react", "import", "jsx-a11y"],
   rules: {
+    // suppress errors for missing 'import React' in files
+    "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [
       "error",
       {
-        extensions: [".tsx"],
+        extensions: [".tsx", ".js", ".jsx"],
       },
     ],
     "import/prefer-default-export": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
   },
+
   settings: {
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"],
