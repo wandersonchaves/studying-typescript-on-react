@@ -1,13 +1,13 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 
-// eslint-disable-next-line import/extensions
 import { Repository } from "../../store/ducks/repositories/types";
-// eslint-disable-next-line import/extensions
 import { ApplicationState } from "../../store";
-// eslint-disable-next-line import/extensions
+
 import * as RepositoriesActions from "../../store/ducks/repositories/actions";
+
+import RepositoryItem from "../RepositoryItem";
 
 interface StateProps {
   repositories: Repository[];
@@ -29,7 +29,13 @@ class RepositoryList extends Component<Props> {
   render() {
     const { repositories } = this.props;
 
-    return <ul>{repositories.map((repository) => repository.name)}</ul>;
+    return (
+      <ul>
+        {repositories.map((repository) => (
+          <RepositoryItem key={repository.id} repository={repository} />
+        ))}
+      </ul>
+    );
   }
 }
 

@@ -1,10 +1,9 @@
 /**
  * Action types
  */
-// eslint-disable-next-line no-shadow
 export enum RepositoriesTypes {
   LOAD_REQUEST = "@repositories/LOAD_REQUEST",
-  LOAD_SUCCESS = "@repositories/LOAD_SUCCESS",
+  LOAD_SUCCCES = "@repositories/LOAD_SUCCCES",
   LOAD_FAILURE = "@repositories/LOAD_FAILURE",
 }
 
